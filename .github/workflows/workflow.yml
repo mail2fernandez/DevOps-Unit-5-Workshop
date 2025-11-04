@@ -13,21 +13,21 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '7.0.x' # Adjust to your project's version
+        dotnet-version: '7.0.x' # Adjust if needed
 
-    # Build C# code
-    - name: Build C# project
-      run: dotnet build
+    # Build C# solution
+    - name: Build C# code
+      run: dotnet build DotnetTemplate.sln
 
     # Run C# tests
     - name: Run C# tests
-      run: dotnet test
+      run: dotnet test DotnetTemplate.Web.Tests/DotnetTemplate.Web.Tests.csproj
 
     # Setup Node.js
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18' # Adjust to your project's version
+        node-version: '18' # Adjust if needed
 
     # Install dependencies
     - name: Install TypeScript dependencies
