@@ -30,7 +30,6 @@ jobs:
         node-version: '18' # Adjust if needed
 
     # Install dependencies
-    - 
     - name: Install TypeScript dependencies
       run: |
         cd DotnetTemplate.Web
