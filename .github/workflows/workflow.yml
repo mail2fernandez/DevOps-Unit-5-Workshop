@@ -50,4 +50,6 @@ jobs:
 
     # Run TypeScript tests
     - name: Run TypeScript tests
-      run: npm test
+      run: |
+        cd DotnetTemplate.Web
+        npm test
