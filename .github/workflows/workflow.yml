@@ -37,8 +37,10 @@ jobs:
 
 
     # Build TypeScript code
-    - name: Build TypeScript
-      run: npm run build
+    - name: Install TypeScript dependencies
+      run: |
+        cd DotnetTemplate.Web
+        npm install
 
     # Run TypeScript linter
     - name: Run linter
