@@ -11,3 +11,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+
+      - name: Restore .NET packages
+        run: dotnet restore
+
+      - name: Build C# code
+        run: dotnet build --no-restore
+
+      - name: Run C# tests
+        run: dotnet test --no-build
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install npm packages
+        run: npm install
+        working-directory: DotnetTemplate.Web
+
+      - name: Build TypeScript
+        run: npm run build
+        working-directory: DotnetTemplate.Web
+
+      - name: Run TypeScript linter
+        run: npm run lint
+        working-directory: DotnetTemplate.Web
+
+      - name: Run TypeScript tests
+        run: npm test
+        working-directory: DotnetTemplate.Web
