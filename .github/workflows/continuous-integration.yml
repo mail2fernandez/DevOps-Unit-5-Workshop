@@ -49,3 +49,4 @@ jobs:
       - name: Run TypeScript tests
         run: npm test
         working-directory: DotnetTemplate.Web
+        
